@@ -13,14 +13,15 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding: 0;
   font-family: "GlacialIndifference";
 }
 
 .contenedor-menu {
-  height: 110vh;
+  min-height: 580px;
   background-image: url("../assets/logos/Spysh-SePensoYSeHizo.png");
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -48,164 +49,115 @@ body {
 
 /* Section */
 .section {
-  margin-top: 20px;
-  height: 100vh;
-  width: 100%;
+  margin-top: 30px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  
 }
-/* Section 1 */
+/*==========================================*/
+/* Section 1 - Cards Socias */
 
 /*Contenedor de las Cards*/
-#section-1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* Animaciones de aparición */
-.contenedor-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  width: 80%;
-  height: 80%;
-}
-
-/* Card */
-.card {
-  width: 50%;
-  height: 100%;
+.contenedor-cards{
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(to top, white 70%, #f48c9e 30%);
-
-  /*Aparicion inicial*/
-  opacity: 0;
-  transform: translateY(50px) scale(1); /* parte desde abajo */
-  filter: blur(5px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
-    filter 0.8s ease-out, box-shadow 0.4s ease;
-}
-
-/* Cuando es visible */
-.card.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-}
-.card.visible:hover {
-  box-shadow: 0px 4px 15px #0000008f;
-}
-
-/*Configuracion Card 3*/
-
-#card-3 {
-  background-image: url("../assets/fondos/fondo_text_entretarjetas.png");
-  background-size: cover;
-  background-position: center;
-  flex-direction: row;
-  position: relative;
-  box-shadow: none;
-  transition-delay: 0.9s;
-}
-#card-3 p {
-  font-size: large;
-  text-align: center;
-  margin-top: 100px;
-  padding: 30px;
-}
-
-/*======== Contenido de la Card =========*/
-.contenedor-card .card #contenedor-imagen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  height: 50%;
-  width: 100%;
-  /*border: 1px solid black;*/
-}
-.contenedor-card .card img {
   width: 70%;
-  height: 90%;
-  border-radius: 100%;
+  gap: 15px;
 }
-.contenedor-card .card #contenedor-h2 {
-  width: 100%;
-  height: 15%;
-  text-align: center;
+/*Card*/
+.card{
+  display: flex;
+  flex-direction: row;  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.164);
+  border-radius: 8px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover{
+  box-shadow: 0 2px 15px -2px rgba(0, 0, 0, 0.295);
+}
+
+/*Imagenes del Card*/
+.card .imagen_socia{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   /*border: 1px solid black;*/
 }
-.contenedor-card .card h2 {
+.card .imagen_socia img{
+  width: 80%;
+}
+/*Textos del card*/
+.card .titulo_socia{
+  /*border: 1px solid black;*/
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.card .titulo_socia h2{
   color: #780036;
-  font-size: 35px;
 }
-.contenedor-card .card #contenedor-h4 {
-  width: 100%;
-  height: 15%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.card .titulo_socia h4{
+  color: #8f8f8f;
+}
+
+.card .texto_socia{
   /*border: 1px solid black;*/
-}
-.contenedor-card .card h4 {
-  margin: 0;
-  color: rgb(135, 135, 135);
-  font-size: 25px;
-}
-.contenedor-card .card #contenedor-button {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /*border: 1px solid black;*/
-}
-.contenedor-card .card button {
   width: 40%;
-  height: 30%;
-  border-radius: 5px;
-  color: white;
-  font-size: large;
-  background-color: #f48c9e;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-.contenedor-card .card button:hover {
-  background-color: #780036;
-  cursor: pointer;
-}
-
-.contenedor-galeriaSwiper_texto {
   display: flex;
   flex-direction: column;
-}
-#card-3 {
-  background-color: white;
-}
-/* Swipper Section */
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #444;
-  display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+  
+}
+/* Card 3*/
+#card-3 .imagen_spysh{
+  width: 50%;
+}
+#card-3 .imagen_spysh img{
+  width: 100%;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#card-3 .texto_spysh{
+  width: 50%;
 }
+
+
+
+
+
+
+
+/*==========================================*/
+/* Section 2 - Servicios */
+
+.contenedor-galeria{
+  display: flex;
+  width: 700px;
+  height: 430px;
+  box-shadow: 0px 4px 15px #000000c4;
+}
+.contenedor-galeria img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity:  .8;
+  transition: 0.5s ease;
+  
+}
+.contenedor-galeria img:hover{
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+
+}
+
+
