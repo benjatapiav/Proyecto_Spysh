@@ -56,7 +56,7 @@ body {
   align-items: center;
   
 }
-/*==========================================*/
+/*==================================================*/
 /* Section 1 - Cards Socias */
 
 /*Contenedor de las Cards*/
@@ -64,19 +64,31 @@ body {
   display: flex;
   flex-direction: column;
   width: 70%;
-  gap: 15px;
+  
 }
-/*Card*/
+/* Card */
 .card{
   display: flex;
   flex-direction: row;  
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.164);
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 20px;
-  transition: box-shadow 0.3s ease;
+  opacity: 0;  
+  transition: opacity 0.8s ease-out, transform 2s ease-out, box-shadow 0.3s ease;
 }
 .card:hover{
-  box-shadow: 0 2px 15px -2px rgba(0, 0, 0, 0.295);
+  /*box-shadow: 5px 2px 12px -3px rgba(0, 0, 0, 0.295);*/
+}
+
+/*Animacion de entrada de Cards*/
+.card.gladys{
+  transform: translateX(-150px);
+}
+.card.mary{
+  transform: translateX(150px);
+}
+.card.visible{
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /*Imagenes del Card*/
@@ -85,11 +97,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
   /*border: 1px solid black;*/
 }
 .card .imagen_socia img{
-  width: 80%;
+  width: 90%;
 }
 /*Textos del card*/
 .card .titulo_socia{
@@ -106,6 +117,7 @@ body {
 }
 .card .titulo_socia h4{
   color: #8f8f8f;
+  font-size: large;
 }
 
 .card .texto_socia{
@@ -117,47 +129,123 @@ body {
   text-align: center;
   
 }
+
 /* Card 3*/
+
 #card-3 .imagen_spysh{
   width: 50%;
 }
 #card-3 .imagen_spysh img{
   width: 100%;
+  border-radius: 10px;
 }
-
 #card-3 .texto_spysh{
   width: 50%;
+  padding: 20px;
+}
+#card-3 .texto_spysh p{
+  text-align: center;
 }
 
 
 
-
-
-
-
-/*==========================================*/
+/*==================================================*/
 /* Section 2 - Servicios */
 
-.contenedor-galeria{
+#section-2{
+  display: flex;
+  flex-direction: row;
+  
+  gap: 90px;
+
+}
+
+
+/* Galeria movil */
+
+.contenedor-galeriaDeServicios .galeria-1{
   display: flex;
   width: 700px;
   height: 430px;
   box-shadow: 0px 4px 15px #000000c4;
 }
-.contenedor-galeria img{
+.contenedor-galeriaDeServicios .galeria-1 img{
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
   opacity:  .8;
   transition: 0.5s ease;
-  
 }
-.contenedor-galeria img:hover{
-  cursor: crosshair;
+.contenedor-galeriaDeServicios .galeria-1 img:hover{
   width: 300px;
   opacity: 1;
   filter: contrast(120%);
-
 }
 
+/* cubo borrador */
+.contenedor-cajasDeServicios{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  gap: 40px;
+  padding: 30px;
+}
+.caja{
+  width: 30%;
+  height: 400px;
+  min-width: 250px;
+  perspective: 1000px;
+}
+.caja-interior{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.caja:hover .caja-interior{
+  transform: rotateY(180deg);
+}
+.caja-front,.caja-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backface-visibility: hidden;
+  gap: 30px;
+}
+.caja-front{
+  background: linear-gradient(to bottom, #f48c9e 30%,#ff79b5 60%);
+  box-shadow: 4px 4px 8px -5px rgba(0, 0, 0, 0.256),
+              -4px -4px 8px -5px rgba(0, 0, 0, 0.256);  
+  color: rgb(112, 0, 69);
+  font-weight: bold;
+  
+}
+.caja-back{
+  transform: rotateY(180deg);
+  background-color: #ff79b561;
+  font-size: larger;
+}
+.caja-back p{
+  padding: 20px;
+}
+.caja-front img{
+  width: 200px;
+  border-radius: 100%;
+  border: 8px solid rgba(255, 255, 255, 0.53);
+}
+.caja-back img{
+  height: 100%;
+  border: 8px solid white;
+}
+.contenedor-cajasDeServicios #caja-extra{
+  background-color: white;
+
+}
 
