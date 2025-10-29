@@ -17,6 +17,12 @@ body {
   font-family: "GlacialIndifference";
 }
 
+
+/*=======================================================*/
+/*============= Menu - Links de redireccion =============*/
+/*=======================================================*/
+
+
 .contenedor-menu {
   min-height: 580px;
   background-image: url("../assets/logos/Spysh-SePensoYSeHizo.png");
@@ -45,9 +51,14 @@ body {
   background-color: #f70096;
   color: white;
 }
-/*==================================================*/
 
-/* Section */
+
+/*======================================================*/
+/*=============== Body Main - Section ==================*/
+/*======================================================*/
+
+
+/*============== Section ==============*/
 .section {
   margin-top: 30px;
   min-height: 100vh;
@@ -56,17 +67,21 @@ body {
   align-items: center;
   
 }
-/*==================================================*/
-/* Section 1 - Cards Socias */
 
-/*Contenedor de las Cards*/
+
+/*======================================================*/
+/*=============== Section 1 - Quienes Somos ============*/
+/*======================================================*/
+
+
+/*=============== Contenedor de las Cards ===============*/
 .contenedor-cards{
   display: flex;
   flex-direction: column;
   width: 70%;
   
 }
-/* Card */
+/*======== Card ========*/
 .card{
   display: flex;
   flex-direction: row;  
@@ -75,8 +90,7 @@ body {
   opacity: 0;  
   transition: opacity 0.8s ease-out, transform 2s ease-out, box-shadow 0.3s ease;
 }
-
-/*Animacion de entrada de Cards*/
+/*=============== Animacion de entrada de Cards =========*/
 .card.gladys{
   transform: translateX(-150px);
 }
@@ -88,21 +102,29 @@ body {
   transform: translateX(0);
 }
 
-/*Imagenes del Card*/
+/*======== Imagenes del Card ========*/
 .card .imagen_socia{
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*border: 1px solid black;*/
 }
 .card .imagen_socia img{
   width: 90%;
   box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.4);
   border-radius: 5%;
+  transition: box-shadow 0.3s ease, transform 0.4s ease;
+  
+}
+.card:hover img{
+  transform: translateY(-10px);
+}
+.card .imagen_socia img:hover{
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+  
 
 }
-/*Textos del card*/
+/*======== Textos del card ========*/
 .card .titulo_socia{
   /*border: 1px solid black;*/
   width: 30%;
@@ -120,7 +142,6 @@ body {
   color: #8f8f8f;
   font-size: x-large;
 }
-
 .card .texto_socia{
   /*border: 1px solid black;*/
   width: 40%;
@@ -131,7 +152,7 @@ body {
   
 }
 
-/* Card 3*/
+/*======== Card 3 - Quienes Somos ========*/
 
 #card-3 .imagen_spysh{
   width: 50%;
@@ -149,6 +170,12 @@ body {
 }
 
 
+/*======================================================*/
+/*================ Section 2 - Servicios ===============*/
+/*======================================================*/
+
+
+/*========= Contenedor principal de cajas animadas =========*/
 .contenedor-cajas{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -159,10 +186,12 @@ body {
   box-sizing: border-box;
   
 }
+/*========= Caja unitaria bloque externo =========*/
 .caja {
   perspective: 1000px;
   max-height: 300px;
 }
+/*========= Caja interior =========*/
 .caja .caja-interior{
   position: relative;
   transition: transform 0.8s;
@@ -173,6 +202,7 @@ body {
 .caja:hover .caja-interior{
   transform: rotateY(180deg);
 }
+/*========= Caja Front y Caja Back =========*/ 
 .caja-front,.caja-back{
   position: absolute;
   width: 100%;
@@ -187,7 +217,7 @@ body {
   box-shadow: 3px 3px 15px 1px rgba(0,0,0,0.381);
 }
 
-/* CAJA FRONT*/
+/*========= Caja Front =========*/
 .caja .caja-front .caja-imagen{
   width: 100%;
   display: flex;
@@ -230,7 +260,7 @@ body {
   height: 100%;
 }
 
-/* CAJA BACK */
+/*========= Caja Back =========*/
 .caja-back{
   transform: rotateY(180deg);
   background-color: #ff66c4;
@@ -241,6 +271,11 @@ body {
   color: white;
   text-shadow: 1px 1px 3px black;
 }
+
+
+/*==================================================*/
+/*=================== Responsive ===================*/
+/*==================================================*/
 
 
 /* Tablets */
