@@ -65,7 +65,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 
@@ -75,6 +75,7 @@ body {
 
 
 /*=============== Contenedor de las Cards ===============*/
+
 .contenedor-cards{
   display: flex;
   flex-direction: column;
@@ -116,7 +117,7 @@ body {
   transition: box-shadow 0.3s ease, transform 0.4s ease;
   
 }
-.card:hover img{
+.card:not(#card-3):hover img{
   transform: translateY(-10px);
 }
 .card .imagen_socia img:hover{
@@ -136,7 +137,7 @@ body {
 }
 .card .titulo_socia h2{
   color: #f70096;
-  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.32);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.32);
 }
 .card .titulo_socia h4{
   color: #8f8f8f;
@@ -153,7 +154,10 @@ body {
 }
 
 /*======== Card 3 - Quienes Somos ========*/
-
+#card-3{
+  display: flex;
+  align-items: center;
+}
 #card-3 .imagen_spysh{
   width: 50%;
 }
@@ -270,6 +274,93 @@ body {
   padding: 20px;
   color: white;
   text-shadow: 1px 1px 3px black;
+}
+/*========= WhatsApp =========*/
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float img {
+  width: 60%;
+  margin-top: 10px;
+}
+
+/*==================================================*/
+/*=================== Section - Proyectos ===================*/
+/*==================================================*/
+#section-3{
+  height: 120vh;
+  border: 1px solid black;
+}
+.contenedor-proyectos{
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-top{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: 20px;
+  overflow: hidden;
+}
+.contenedor-top .contenedor-galeriaLeft{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: col;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 2%;
+  
+}
+.contenedor-top .contenedor-galeriaRight{
+  border: 1px solid black;
+  width: 40%; 
+}
+.contenedor-top .contenedor-galeriaLeft img{
+  width: 0;
+  flex-grow: 1;
+  object-fit: cover;
+  filter: grayscale(80%);
+  transition: opacity .7s ease, width 0.7s ease;
+}
+.contenedor-top .contenedor-galeriaLeft img:hover{
+  cursor: pointer;
+  width: 60%;
+  height: 100%;
+  filter: contrast(120%);
+}
+.contenedor-bottom{
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  padding: 20px;
+}
+.contenedor-galeriaBottom{
+  border: 1px solid black;
+  width: 100%;
+  height: 120%;
+
 }
 
 
