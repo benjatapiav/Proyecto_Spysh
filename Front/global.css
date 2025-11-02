@@ -17,14 +17,12 @@ body {
   font-family: "GlacialIndifference";
 }
 
-
 /*=======================================================*/
 /*============= Menu - Links de redireccion =============*/
 /*=======================================================*/
 
-
 .contenedor-menu {
-  min-height: 580px;
+  height: 100vh;
   background-image: url("../assets/logos/Spysh-SePensoYSeHizo.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,81 +50,83 @@ body {
   color: white;
 }
 
-
 /*======================================================*/
 /*=============== Body Main - Section ==================*/
 /*======================================================*/
 
-
 /*============== Section ==============*/
 .section {
-  margin-top: 30px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding: 40px;
+  /*border: 1px solid black;*/
 }
-
 
 /*======================================================*/
 /*=============== Section 1 - Quienes Somos ============*/
 /*======================================================*/
 
-
 /*=============== Contenedor de las Cards ===============*/
-
-.contenedor-cards{
+#section-1 {
+  margin-top: 100px;
+  background-color: #ffacde09;
+}
+.contenedor-cards {
   display: flex;
   flex-direction: column;
   width: 70%;
-  
+  gap: 30px;
 }
+
 /*======== Card ========*/
-.card{
+.card {
   display: flex;
-  flex-direction: row;  
-  border-radius: 20px;
+  flex-direction: row;
+  border-radius: 30px;
   padding: 20px;
-  opacity: 0;  
-  transition: opacity 0.8s ease-out, transform 2s ease-out, box-shadow 0.3s ease;
+  opacity: 0;
+  max-height: 100%;
+  transition: opacity 0.8s ease-out, transform 2s ease-out, box-shadow 0.5s ease;
+  background-color: white;
+}
+.card:hover {
+  box-shadow: 2px 2px 15px -2px rgba(131, 131, 131, 0.521);
 }
 /*=============== Animacion de entrada de Cards =========*/
-.card.gladys{
+.card.gladys {
   transform: translateX(-150px);
 }
-.card.mary{
+.card.mary {
   transform: translateX(150px);
 }
-.card.visible{
+.card.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
 /*======== Imagenes del Card ========*/
-.card .imagen_socia{
+.card .imagen_socia {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.card .imagen_socia img{
-  width: 90%;
+.card .imagen_socia img {
+  width: 70%;
   box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.4);
-  border-radius: 5%;
+  border-radius: 50%;
   transition: box-shadow 0.3s ease, transform 0.4s ease;
-  
 }
-.card:not(#card-3):hover img{
+.card:not(#card-3):hover img {
   transform: translateY(-10px);
 }
-.card .imagen_socia img:hover{
+.card .imagen_socia img:hover {
   box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
-  
-
 }
 /*======== Textos del card ========*/
-.card .titulo_socia{
+.card .titulo_socia {
   /*border: 1px solid black;*/
   width: 30%;
   display: flex;
@@ -135,60 +135,60 @@ body {
   text-align: center;
   padding: 10px;
 }
-.card .titulo_socia h2{
+.card .titulo_socia h2 {
   color: #f70096;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.32);
 }
-.card .titulo_socia h4{
+.card .titulo_socia h4 {
   color: #8f8f8f;
   font-size: x-large;
 }
-.card .texto_socia{
+.card .texto_socia {
   /*border: 1px solid black;*/
   width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  
+}
+.card .texto_socia p {
+  padding: 10%;
 }
 
 /*======== Card 3 - Quienes Somos ========*/
-#card-3{
+#card-3 {
   display: flex;
   align-items: center;
 }
-#card-3 .imagen_spysh{
+#card-3 .imagen_spysh {
   width: 50%;
 }
-#card-3 .imagen_spysh img{
-  width: 100%;
+#card-3 .imagen_spysh img {
+  width: 80%;
   border-radius: 10px;
 }
-#card-3 .texto_spysh{
+#card-3 .texto_spysh {
   width: 50%;
   padding: 20px;
 }
-#card-3 .texto_spysh p{
+#card-3 .texto_spysh p {
   text-align: center;
 }
-
 
 /*======================================================*/
 /*================ Section 2 - Servicios ===============*/
 /*======================================================*/
-
-
+#section-2 {
+}
 /*========= Contenedor principal de cajas animadas =========*/
-.contenedor-cajas{
+.contenedor-cajas {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap:20px;
+  grid-gap: 20px;
   padding: 20px;
   min-width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  
 }
 /*========= Caja unitaria bloque externo =========*/
 .caja {
@@ -196,18 +196,19 @@ body {
   max-height: 300px;
 }
 /*========= Caja interior =========*/
-.caja .caja-interior{
+.caja .caja-interior {
   position: relative;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   width: 100%;
   height: 100%;
 }
-.caja:hover .caja-interior{
+.caja:hover .caja-interior {
   transform: rotateY(180deg);
 }
-/*========= Caja Front y Caja Back =========*/ 
-.caja-front,.caja-back{
+/*========= Caja Front y Caja Back =========*/
+.caja-front,
+.caja-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -218,59 +219,60 @@ body {
   text-align: center;
   backface-visibility: hidden;
   border-radius: 10px;
-  box-shadow: 3px 3px 15px 1px rgba(0,0,0,0.381);
+  box-shadow: 3px 3px 15px 1px rgba(0, 0, 0, 0.381);
 }
 
 /*========= Caja Front =========*/
-.caja .caja-front .caja-imagen{
+.caja .caja-front .caja-imagen {
   width: 100%;
   display: flex;
   justify-content: center;
   /*border: 1px solid black;*/
-  
 }
-.caja .caja-front .caja-imagen img{
+.caja .caja-front .caja-imagen img {
   width: 90%;
   box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.381);
   border-radius: 10px;
 }
-.caja .caja-front .caja-titulo{
+.caja .caja-front .caja-titulo {
   width: 100%;
   text-align: center;
   /*border: 1px solid black;*/
 }
-.caja .caja-front .caja-titulo h1{
+.caja .caja-front .caja-titulo h1 {
   margin: 0;
   font-size: x-large;
   color: white;
   text-shadow: 1px 1px 3px black;
 }
 
-.caja .caja-front #logo_spysh_blanco{
+.caja .caja-front #logo_spysh_blanco {
   max-height: 100px;
   width: 50%;
 }
 
-.caja-front{
+.caja-front {
   background-color: #f70096;
   gap: 20px;
 }
 
-.caja-front.logo-spysh-front,.caja-back.logo-spysh-back{
+.caja-front.logo-spysh-front,
+.caja-back.logo-spysh-back {
   background-color: white;
   box-shadow: none;
 }
-.caja-front.logo-spysh-front img,.caja-back.logo-spysh-back img{
+.caja-front.logo-spysh-front img,
+.caja-back.logo-spysh-back img {
   height: 100%;
 }
 
 /*========= Caja Back =========*/
-.caja-back{
+.caja-back {
   transform: rotateY(180deg);
   background-color: #ff66c4;
   font-size: larger;
 }
-.caja-back p{
+.caja-back p {
   padding: 20px;
   color: white;
   text-shadow: 1px 1px 3px black;
@@ -305,24 +307,24 @@ body {
 /*==================================================*/
 /*=================== Section - Proyectos ===================*/
 /*==================================================*/
-#section-3{
+#section-3 {
   height: 120vh;
   border: 1px solid black;
 }
-.contenedor-proyectos{
+.contenedor-proyectos {
   width: 95%;
   height: 90%;
   display: flex;
   flex-direction: column;
 }
-.contenedor-top{
+.contenedor-top {
   display: flex;
   flex-direction: row;
   height: 100%;
   gap: 20px;
   overflow: hidden;
 }
-.contenedor-top .contenedor-galeriaLeft{
+.contenedor-top .contenedor-galeriaLeft {
   width: 60%;
   height: 100%;
   display: flex;
@@ -331,43 +333,39 @@ body {
   justify-content: center;
   overflow: hidden;
   border-radius: 2%;
-  
 }
-.contenedor-top .contenedor-galeriaRight{
+.contenedor-top .contenedor-galeriaRight {
   border: 1px solid black;
-  width: 40%; 
+  width: 40%;
 }
-.contenedor-top .contenedor-galeriaLeft img{
+.contenedor-top .contenedor-galeriaLeft img {
   width: 0;
   flex-grow: 1;
   object-fit: cover;
   filter: grayscale(80%);
-  transition: opacity .7s ease, width 0.7s ease;
+  transition: opacity 0.7s ease, width 0.7s ease;
 }
-.contenedor-top .contenedor-galeriaLeft img:hover{
+.contenedor-top .contenedor-galeriaLeft img:hover {
   cursor: pointer;
   width: 60%;
   height: 100%;
   filter: contrast(120%);
 }
-.contenedor-bottom{
+.contenedor-bottom {
   display: flex;
   flex-direction: row;
   height: 20%;
   padding: 20px;
 }
-.contenedor-galeriaBottom{
+.contenedor-galeriaBottom {
   border: 1px solid black;
   width: 100%;
   height: 120%;
-
 }
-
 
 /*==================================================*/
 /*=================== Responsive ===================*/
 /*==================================================*/
-
 
 /* Tablets */
 @media (max-width: 1024px) {
